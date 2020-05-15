@@ -42,10 +42,9 @@ float const LATITUDE = 51.062369;
 
 
 //WiFi
-const char* ssid     = "orange";
-const char* password = "w!r messen 1000 Werte";
-//const char* ssid     = "smuldom";
-//const char* password = "dresdener str 33a";
+const char* ssid     = "******";
+const char* password = "*******";
+
 IPAddress ipno;
 
 
@@ -136,8 +135,6 @@ void setup()
 
 void loop() {
   if ((now() > NextSync) && (second(now()) == 30)) { // jede SYNC_TIME
-    //Serial.println("ESP reste");
-    //ESP.reset();
     Serial.println("");
     Serial.println(F("*************************"));
     if (WiFi.status() != WL_CONNECTED) {
@@ -174,8 +171,6 @@ void loop() {
     //Serial.print(second(now()));
     if (second(now()) == 1) {
       Serial.print("\nx.");
-      //Serial.println("");
-      //Serial.print(".");
     }
     else if ((second(now()) > 1) && (second(now()) < 30))
       Serial.print(".");
