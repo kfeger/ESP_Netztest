@@ -1,7 +1,6 @@
 //Serielle Ausgabe der aktuellen Zeit
 
 void printDigits(int digits) {
-  // utility for digital clock display: prints preceding colon and leading 0
   if (digits < 10)
     Serial.print('0');
   Serial.print(digits);
@@ -47,5 +46,4 @@ void PrintIPInfo (void) {
   Serial.print(" DNS-Server: ");
   WiFi.dnsIP().printTo(Serial);
   Serial.println();
-
 }
