@@ -7,10 +7,7 @@ void SunUpDown (void) {
     if (City.SunRise(Heute)) {
       if (LTZ.locIsDST(now())) {
         Heute[tl_hour] += 1;
-        //Serial.print("Sommer, ");
       }
-      /*else
-        Serial.print("Winter, ");*/
       Serial.print("  Sonnenaufgang heute um ");
       Serial.print(Heute[tl_hour]);
       Serial.print(":");
@@ -21,17 +18,13 @@ void SunUpDown (void) {
     if (City.SunSet(Heute)) {
       if (LTZ.locIsDST(now())) {
         Heute[tl_hour] += 1;
-        //Serial.print("Sommer, ");
       }
-      /*else
-        Serial.print("Winter, ");*/
       Serial.print("Sonnenuntergang heute um ");
       Serial.print(Heute[tl_hour]);
       Serial.print(":");
       printDigits(Heute[tl_minute]);
       SonneUnterZeit = Heute[tl_hour] * 60 + Heute[tl_minute];
     }
-    //Serial.print("Jetz = "); Serial.print(JetztZeit); Serial.print(" Auf = "); Serial.print(SonneAufZeit); Serial.print(" Unter = "); Serial.println(SonneUnterZeit);
     if ((JetztZeit > SonneAufZeit) && (JetztZeit < SonneUnterZeit)) {
       SonneDa = true;
       PreSonneDa = SonneDa;
